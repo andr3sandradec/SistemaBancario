@@ -4,8 +4,6 @@
  */
 package vista;
 
-import javax.swing.JButton;
-
 /**
  *
  * @author Usuario
@@ -17,8 +15,8 @@ public class VistaBanco extends javax.swing.JFrame {
      */
     public VistaBanco() {
         initComponents();
-    
-}
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,13 +51,16 @@ public class VistaBanco extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtFecha.setText("(Ej: 01/01/2000");
+        txtFecha.setText("(Ej: 01/01/2000)");
+        txtFecha.addActionListener(this::txtFechaActionPerformed);
 
         cmbTipoCuenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ahorros", "Corriente", " " }));
 
+        txtSaldo.setText("0");
         txtSaldo.addActionListener(this::txtSaldoActionPerformed);
 
-        txtSobregiro.setText("Solo para corriente");
+        txtSobregiro.setEditable(false);
+        txtSobregiro.setText("0");
 
         btnCrear.setText("Crear");
 
@@ -81,9 +82,9 @@ public class VistaBanco extends javax.swing.JFrame {
 
         jLabel4.setText("Fecha (dd/mm/yyyy)");
 
-        jLabel5.setText("Tipo de cuenta: ");
+        jLabel5.setText("Saldo inicial");
 
-        jLabel6.setText("Número de cuenta: ");
+        jLabel6.setText("Cupo Sobregiro");
 
         jLabel7.setText("Monto para Transacción $:");
 
@@ -132,15 +133,14 @@ public class VistaBanco extends javax.swing.JFrame {
                 .addContainerGap(49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtTitular, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCrear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addComponent(jLabel7)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                            .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(txtTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                        .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
@@ -198,9 +198,12 @@ public class VistaBanco extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtSaldoActionPerformed
 
+    private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechaActionPerformed
+
 // --- GETTERS PARA EL CONTROLADOR ---
-    public javax.swing.JButton getBtnConsignar() {  JButton btnConsignar = null;
-return btnConsignar; }
+    public javax.swing.JButton getBtnConsignar() { return btnConsignar; }   
     public javax.swing.JButton getBtnCrear() { return btnCrear; }
     public javax.swing.JButton getBtnRetirar() { return btnRetirar; }
     public javax.swing.JButton getBtnVerSaldo() { return btnVerSaldo; }
