@@ -17,7 +17,7 @@ public class VistaBanco extends javax.swing.JFrame {
      */
     public VistaBanco() {
         initComponents();
-    }
+    
 }
 
     /**
@@ -238,4 +238,4 @@ return btnConsignar; }
     private javax.swing.JTextField txtSobregiro;
     private javax.swing.JTextField txtTitular;
     // End of variables declaration//GEN-END:variables
-
+}
